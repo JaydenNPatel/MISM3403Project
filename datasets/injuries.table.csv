@@ -1,0 +1,4 @@
+injury_id,player_id,injury_description,date_reported,status
+1,6,"Left Achilles Tendon Repair",2024-10-01,Out
+2,7,"Right Ankle Sprain",2025-01-06,Day-to-Day
+3,12,"Left Toe Soreness",2025-01-08,Questionable

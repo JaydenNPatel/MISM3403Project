@@ -1,0 +1,7 @@
+staff_id,coach_id,team_id,role,start_date,end_date
+1,1,1,"Head Coach",2019-06-11,2025-03-28
+2,2,1,"Assistant Coach",2024-07-07,2025-03-28
+3,2,1,"Head Coach",2025-03-29,NULL
+4,3,1,"Assistant Coach",2025-04-05,NULL
+5,4,1,"Assistant Coach",2024-07-07,NULL
+6,5,1,"Assistant Coach",2024-07-07,NULL

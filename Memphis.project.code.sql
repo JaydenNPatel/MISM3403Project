@@ -1,11 +1,12 @@
 use neu_student_daniel_vonderwalde;
 
-#Games  Memphins won 
+#Games  Memphis won 
 select * from games where home_team_id = 1 and home_score > away_score;
 
 #Total jersey sales per player
 select count(sale_id), player_id, price, count(sale_id)*price as total_sales from jersey_sales group by player_id;
 
+#Total ticket sales per game 
 select count(ticket_sale_id), game_id, sum(total_price) from ticket_sales group by game_id;
 
 # Total sales in giveaway night 
@@ -125,3 +126,52 @@ FROM (
 ) combined
 GROUP BY date_value
 ORDER BY total_revenue DESC;
+
+#View: Games Memphis won
+CREATE VIEW MemphisWins AS
+SELECT * FROM Games
+WHERE home_team_id = 1 AND home_score > away_score;
+
+SELECT * FROM MemphisWins;
+
+# View: Total jersey sales per player
+CREATE VIEW JerseySalesPerPlayer AS
+SELECT r.first_name, r.last_name,
+       COUNT(js.sale_id) AS jerseys_sold,
+       SUM(js.price) AS total_revenue
+FROM Jersey_Sales js
+JOIN Roster r ON js.player_id = r.player_id
+GROUP BY r.player_id;
+
+
+SELECT * FROM JerseySalesPerPlayer ORDER BY total_revenue DESC;
+
+DELIMITER $$
+
+CREATE TRIGGER update_daily_revenue_ticket
+AFTER INSERT ON Ticket_Sales
+FOR EACH ROW
+BEGIN
+  UPDATE Daily_Revenue
+  SET ticket_revenue = ticket_revenue + NEW.total_price
+  WHERE date_value = NEW.purchase_date;
+END$$
+
+DELIMITER ;
+
+
+DELIMITER $$
+
+CREATE PROCEDURE GetTopJerseySellers()
+BEGIN
+  SELECT r.first_name, r.last_name, 
+         COUNT(js.sale_id) AS jerseys_sold,
+         SUM(js.price) AS total_revenue
+  FROM Jersey_Sales js
+  JOIN Roster r ON js.player_id = r.player_id
+  GROUP BY r.player_id, r.first_name, r.last_name
+  ORDER BY total_revenue DESC
+  LIMIT 5;
+END$$
+
+DELIMITER ;

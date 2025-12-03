@@ -1,0 +1,13 @@
+player_id,first_name,last_name,birthdate,college,nba_debut_date,team_id,jersey_number,position,height_inches,weight_lbs
+1,Ja,Morant,1999-08-10,"Murray State",2019-10-23,1,12,G,74,174
+2,Jaren,"Jackson Jr.",1999-09-15,"Michigan State",2018-10-17,1,13,F-C,82,242
+3,Desmond,Bane,1998-06-25,TCU,2020-12-23,1,22,G,78,215
+4,Marcus,Smart,1994-03-06,"Oklahoma State",2014-10-29,1,36,G,75,220
+5,Santi,Aldama,2001-01-10,"Loyola (MD)",2021-10-20,1,7,F-C,84,215
+6,Brandon,Clarke,1996-09-19,Gonzaga,2019-10-23,1,15,F,80,215
+7,Zach,Edey,2002-05-14,Purdue,2024-10-22,1,14,C,87,305
+8,GG,Jackson,2004-12-17,"South Carolina",2023-02-05,1,45,F,81,210
+9,Luke,Kennard,1996-06-24,Duke,2017-10-18,1,10,G,77,206
+10,John,Konchar,1996-03-22,"Purdue Fort Wayne",2019-11-09,1,46,G,77,210
+11,Vince,"Williams Jr.",2000-08-30,VCU,2021-10-24,1,5,G-F,76,205
+12,Scotty,"Pippen Jr.",2000-11-10,Vanderbilt,2022-10-19,1,1,G,74,170
