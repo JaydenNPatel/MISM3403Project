@@ -1,5 +1,3 @@
-use neu_student_daniel_vonderwalde;
-
 #Games  Memphis won 
 select * from games where home_team_id = 1 and home_score > away_score;
 
